@@ -1,4 +1,4 @@
-package br.com.fiap.fiapapp.ui.screens.viewmodel
+package br.com.fiap.fiapapp.ui.viewmodel
 
 
 
@@ -49,6 +49,4 @@ class TelaInicialViewModel(
             usuarioDataStorePreferences.salvarUsuario(_uiState.value)
         }
     }
-}
-class TelaInicialViewModel {
 }
