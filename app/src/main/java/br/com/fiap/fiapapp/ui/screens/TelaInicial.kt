@@ -43,7 +43,7 @@ fun TelaInicial() {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "FiapApp",
+                text = "iData Store",
                 color = MaterialTheme.colorScheme.onBackground,
                 style = MaterialTheme.typography.displayLarge
             )
