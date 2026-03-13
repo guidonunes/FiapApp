@@ -2,6 +2,7 @@ package br.com.fiap.fiapapp.data.repository
 
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -27,5 +28,14 @@ class UsuarioDataStorePreferences(private val context: Context) {
             idade = preferences[IDADE] ?: 0,
             temaEscuro = preferences[TEMA_ESCURO] ?: false
         )
+    }
+
+    suspend fun salvarUsuario(usuario: Usuario) {
+        context.dataStore.edit { preferences ->
+            preferences[NOME] = usuario.nome
+            preferences[EMAIL] = usuario.email
+            preferences[IDADE] = usuario.idade
+            preferences[TEMA_ESCURO] = usuario.temaEscuro
+        }
     }
 }
